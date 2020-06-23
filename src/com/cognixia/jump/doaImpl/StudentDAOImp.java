@@ -1,6 +1,9 @@
-package com.cognixia.jump.jdbc.project;
+package com.cognixia.jump.doaImpl;
 
 import java.util.List;
+
+import com.cognixia.jump.doa.StudentDAO;
+import com.cognixia.jump.models.Student;
 
 public class StudentDAOImp implements StudentDAO {
 

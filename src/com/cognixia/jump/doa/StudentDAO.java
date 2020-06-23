@@ -1,6 +1,8 @@
-package com.cognixia.jump.jdbc.project;
+package com.cognixia.jump.doa;
 
 import java.util.List;
+
+import com.cognixia.jump.models.Student;
 
 public interface StudentDAO {
 
