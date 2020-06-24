@@ -77,24 +77,23 @@ public class StudentDAOImp implements StudentDAO {
 	@Override
 	public boolean addStudent(Student student) {
 		
-		 String query = " insert into users (id, first_name, last_name, gender, date_of_birth, credits, addr_id, dept_id)"
+		 String query = "insert into student (id, first_name, last_name, gender, date_of_birth, credits, addr_id, dept_id)"
 			        + " values (?, ?, ?, ?, ?, ?, ?, ?)"; 
 		
 		try {
 			
-			int deptId = student.getDept().getId();
-			int addrId = student.getAddress().getId();
+			
 			connection = ConnectionManager.getConnection();
 			
 			PreparedStatement preparedStmt = connection.prepareStatement(query);
 			
-			preparedStmt.setString(2,"Joetta");
-			preparedStmt.setString(3,"Hall");
-			preparedStmt.setString(4,"F");
-			preparedStmt.setDouble(5,1995-01-07);
-			preparedStmt.setInt(6,30);
-			preparedStmt.setInt(7,addrId);
-			preparedStmt.setInt(8,deptId);
+			preparedStmt.setString(2,student.getFirstName());
+			preparedStmt.setString(3,student.getLastName());
+			preparedStmt.setString(4,student.getGender());
+			preparedStmt.setDate(5,student.getDob());
+			preparedStmt.setInt(6,student.getCredits());
+			preparedStmt.setInt(7,student.getAddress().getId());
+			preparedStmt.setInt(8,student.getDept().getId());
 			
 			
 		      // execute the preparedstatement
