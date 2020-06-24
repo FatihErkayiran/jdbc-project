@@ -15,8 +15,8 @@ public class Student {
 	private Address address;
 	private Department dept;
 
-	public Student(int id, String firstName, String lastName, String gender, Date dob, int credits, Address address,
-			Department dept) {
+	public Student(int id, String firstName, String lastName, String gender, Date dob, int credits, int addrId,
+			int deptId) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -24,8 +24,7 @@ public class Student {
 		this.gender = gender;
 		this.dob = dob;
 		this.credits = credits;
-		this.address = address;
-		this.dept = dept;
+		
 	}
 
 	public int getId() {
